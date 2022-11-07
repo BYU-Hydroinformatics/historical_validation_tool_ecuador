@@ -1,6 +1,13 @@
-<{% extends "historical_validation_tool_ecuador/base.html" %} {% load static %}
-{% block import_gizmos %} {% endblock %} {% block header_buttons %}
-<div
+{% extends "historical_validation_tool_ecuador/base.html" %} 
+{% load static %}
+
+{% block import_gizmos %} 
+
+{% endblock %} 
+
+{% block header_buttons %}
+
+<!-- <div
   class="header-button glyphicon-button"
   data-toggle="tooltip"
   data-placement="bottom"
@@ -9,11 +16,16 @@
   <a data-toggle="modal" data-target="#about"
     ><span class="glyphicon glyphicon-info-sign"></span
   ></a>
+</div> -->
+
+<div class="header-button" data-bs-toggle="tooltip" data-placement="bottom" title="About">
+  <a data-bs-toggle="modal" data-bs-target="#about"><i class="bi bi-question-diamond-fill"></i></a>
 </div>
-{% endblock %} {% block app_navigation_items %} {% url
-"historical_validation_tool_ecuador:home" as home %} {% url
-"historical_validation_tool_ecuador:user_manual" as user_manual %} {% url
-"historical_validation_tool_ecuador:technical_manual" as technical_manual %}
+
+{% endblock %} {% block app_navigation_items %} 
+{% url "historical_validation_tool_ecuador:home" as home %} 
+{% url "historical_validation_tool_ecuador:user_manual" as user_manual %} 
+{% url "historical_validation_tool_ecuador:technical_manual" as technical_manual %}
 
 <li class="{% if request.path == home %}active{% endif %}">
   <a href="{{ home }}">Aplicación</a>
@@ -236,8 +248,19 @@
   >
 </p>
 
-{% endblock %} {% block after_app_content %} {% endblock %} {% block app_actions
-%} {% endblock %} {% block scripts %} {{ block.super }}
+{% endblock %} 
+
+{% block after_app_content %} 
+
+{% endblock %} 
+
+{% block app_actions %} 
+
+{% endblock %} 
+
+{% block scripts %} 
+
+{{ block.super }}
 <script
   src="{% static 'historical_validation_tool_ecuador/js/manual.js' %}"
   type="text/javascript"
