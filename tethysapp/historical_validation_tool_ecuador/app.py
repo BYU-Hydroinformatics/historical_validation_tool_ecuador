@@ -7,7 +7,7 @@ class HistoricalValidationToolEcuador(TethysAppBase):
     """
 
     name = 'Historical Validation Tool Ecuador'
-    index = 'historical_validation_tool_ecuador:home'
+    index = 'home'
     icon = 'historical_validation_tool_ecuador/images/hvt.jpg'
     package = 'historical_validation_tool_ecuador'
     root_url = 'historical-validation-tool-ecuador'
