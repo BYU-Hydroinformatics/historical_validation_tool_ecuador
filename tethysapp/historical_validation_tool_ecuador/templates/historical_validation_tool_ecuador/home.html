@@ -98,7 +98,7 @@
 {% block after_app_content %}
   <!----Observed Data ----->
   <div class="modal fade" id="obsgraph" tabindex="-1" role="dialog" aria-labelledby="about-modal-label">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" style="color:#fcbf10; background-color:#20295c;border-color:#20295c;" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -306,11 +306,13 @@
   </div>
   <!-- About Modal -->
   <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="help-modal-label">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" style="color:#fcbf10; background-color:#20295c;border-color:#20295c;" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
           <h5 class="modal-title" id="help-modal-label" style="color:#20295c;"> <strong> HISTORICAL VALIDATION TOOL </strong> </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
         </div>
         <div class="modal-body">
           <p> La app <strong>Historical Validation Tool personalizada para Ecuador</strong> es una aplicación liviana para evaluar y corregir el sesgo de la simulación histórica para la herramienta de predicción de caudales GEOGloWS ECMWF en Ecuador.</p>
