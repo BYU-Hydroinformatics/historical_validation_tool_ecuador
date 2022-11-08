@@ -33,7 +33,7 @@ from .model import Model as model
 from .model import Stations_manage as stations
 
 
-@controller(name='demo',url='historical-validation-tool-ecuador')
+@controller(name='home',url='historical-validation-tool-ecuador')
 def home(request):
     """
     Controller for the app home page.
