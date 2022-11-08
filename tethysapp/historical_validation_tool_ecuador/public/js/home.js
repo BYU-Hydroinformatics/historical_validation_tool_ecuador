@@ -670,14 +670,47 @@ function map_events() {
 		         		longitud = result["features"][0]["properties"]["Longitud"];
 		         		elevacion = result["features"][0]["properties"]["Elevacion"];
 
-		         		$("#station-info").append('<h3 id="Station-Name-Tab">Current Station: '+ stationname
-                        			+ '</h3><h5 id="Station-Code-Tab">Station Code: '
-                        			+ stationcode + '</h3><h5 id="COMID-Tab">Station COMID: '
-                        			+ streamcomid+ '</h5><h5>Basin: '+ basin + '</h5><h5>Río: '
-                        			+ river + '</h5><h5>Provincia: '+ province + '</h5><h5>Cantón: '
-                        			+ canton + '</h5><h5>Parroquia: '+ parroquia + '</h5><h5>Latitud: '
-                        			+ latitud + '°</h5><h5>Longitud: '+ longitud + '°</h5><h5>Elevación: '
-                        			+ elevacion + 'msnm</h7>');
+
+                         $('#Station-Name-Tab').html(stationname)
+
+                         $('#station-info').append(
+                           '<div class=" col col-md-6">'+
+             
+                             '<p id="Station-Code-Tab"> <strong> Station Code:</strong> ' +
+                             stationcode +
+                             '</p><p  id="COMID-Tab"><strong>Station COMID:</strong>' +
+                             streamcomid +
+                             '</p><p ><strong>Basin:</strong>' +
+                             basin +
+                             '</p><p ><strong>Río:</strong>' +
+                             river +
+                             '</p><p><strong>Provincia:</strong>' +
+                             province +
+                               '</p><p><strong>Cantón:</strong>' +
+                               canton + '</p>'+
+                               '</div><div class=" col col-md-6">'+
+                               '<p><strong>Parroquia:</strong>' +
+                               parroquia +
+                               '</p><p><strong>Latitude:</strong>' +
+                               latitud +
+                               '°</p><p><strong>Longitude:</strong>' +
+                               longitud +
+                               '°</p><p><strong>Elevation:</strong>' +
+                               elevacion +
+                               'msnm</p>' +
+                             '</div>'
+             
+                         );
+
+
+		         		// $("#station-info").append('<h3 id="Station-Name-Tab">Current Station: '+ stationname
+                        // 			+ '</h3><h5 id="Station-Code-Tab">Station Code: '
+                        // 			+ stationcode + '</h3><h5 id="COMID-Tab">Station COMID: '
+                        // 			+ streamcomid+ '</h5><h5>Basin: '+ basin + '</h5><h5>Río: '
+                        // 			+ river + '</h5><h5>Provincia: '+ province + '</h5><h5>Cantón: '
+                        // 			+ canton + '</h5><h5>Parroquia: '+ parroquia + '</h5><h5>Latitud: '
+                        // 			+ latitud + '°</h5><h5>Longitud: '+ longitud + '°</h5><h5>Elevación: '
+                        // 			+ elevacion + 'msnm</h7>');
 
                         get_requestData(watershed, subbasin, streamcomid, stationcode, stationname, startdate);
                     },

@@ -100,8 +100,37 @@
   <div class="modal fade" id="obsgraph" tabindex="-1" role="dialog" aria-labelledby="about-modal-label">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" style="color:#fcbf10; background-color:#20295c;border-color:#20295c;" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-header" id="modal-headerex">
+
+          <div class="row">
+            <div class="col-md-10">
+              <h4 id="Station-Name-Tab"> 
+
+              </h4>
+            </div>
+
+            <div class="col-md-2">
+              <div class = "logos_cuadrado" align="right">
+                <img class="obslogos" src="{% static 'historical_validation_tool_ecuador/images/my-icon-inamhi.png' %}">
+                <img class="obslogos" src="{% static 'historical_validation_tool_ecuador/images/byu_logo.png' %}">
+                <img class="obslogos" src="{% static 'historical_validation_tool_ecuador/images/Servir_logo.jpeg' %}">
+                <img class="obslogos" src="{% static 'historical_validation_tool_ecuador/images/EcoCiencia.png' %}">
+              </div>
+                
+            </div>
+            <div id="interaction"></div>
+          </div>
+          <div class="row">
+            <div id="station-info" class="col-md-10 row"></div>
+
+          </div>
+
+
+
+
+
+
+          <!-- <button type="button" class="close" style="color:#fcbf10; background-color:#20295c;border-color:#20295c;" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <div class="row">
             <div id="station-info" class="col-md-8"></div>
             <div class="col-md-4">
@@ -113,7 +142,7 @@
               </div>
             </div>
             <div id="interaction"></div>
-          </div>
+          </div> -->
         </div>
         <div class="modal-body">
           <!-- Nav tabs -->
