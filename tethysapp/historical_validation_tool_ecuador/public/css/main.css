@@ -1,6 +1,10 @@
 #modal-headerex{
   display: inline;
 }
+#inamhi_logo{
+  height: 50px;
+
+}
 
 .logos_cuadrado{
   display: flex;
@@ -10,7 +14,7 @@
   justify-content: end;
 }
 #servir_logo{
-  height: 47px;
+  height: 70px;
 }
 
 
