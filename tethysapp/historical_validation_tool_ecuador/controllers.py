@@ -27,10 +27,13 @@ from .app import HistoricalValidationToolEcuador as app
 
 import time
 
+from tethys_sdk.routing import controller
 # Call model script (folder)
 from .model import Model as model
 from .model import Stations_manage as stations
 
+
+@controller(name='home',url='historical-validation-tool-ecuador')
 def home(request):
     """
     Controller for the app home page.
@@ -140,7 +143,7 @@ def home(request):
 
     return render(request, 'historical_validation_tool_ecuador/home.html', context)
 
-
+@controller(name='get_popup_response',url='historical-validation-tool-ecuador/get-request-data')
 def get_popup_response(request):
     """
     get station attributes
@@ -235,7 +238,7 @@ def get_popup_response(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_hydrographs',url='historical-validation-tool-ecuador/get-hydrographs')
 def get_hydrographs(request):
     """
     Get observed data from csv files in Hydroshare
@@ -303,7 +306,7 @@ def get_hydrographs(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_dailyAverages',url='historical-validation-tool-ecuador/get-dailyAverages')
 def get_dailyAverages(request):
     """
     Get observed data from csv files in Hydroshare
@@ -381,7 +384,7 @@ def get_dailyAverages(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_monthlyAverages',url='historical-validation-tool-ecuador/get-monthlyAverages')
 def get_monthlyAverages(request):
     """
     Get observed data from csv files in Hydroshare
@@ -460,7 +463,7 @@ def get_monthlyAverages(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_scatterPlot',url='historical-validation-tool-ecuador/get-scatterPlot')
 def get_scatterPlot(request):
     """
     Get observed data from csv files in Hydroshare
@@ -579,7 +582,7 @@ def get_scatterPlot(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_scatterPlotLogScale',url='historical-validation-tool-ecuador/get-scatterPlotLogScale')
 def get_scatterPlotLogScale(request):
     """
     Get observed data from csv files in Hydroshare
@@ -673,7 +676,7 @@ def get_scatterPlotLogScale(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_volumeAnalysis',url='historical-validation-tool-ecuador/get-volumeAnalysis')
 def get_volumeAnalysis(request):
     """
     Get observed data from csv files in Hydroshare
@@ -773,7 +776,7 @@ def get_volumeAnalysis(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='volume_table_ajax',url='historical-validation-tool-ecuador/volume-table-ajax')
 def volume_table_ajax(request):
     """Calculates the volumes of the simulated
     and observed streamflow"""
@@ -841,7 +844,7 @@ def volume_table_ajax(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='make_table_ajax',url='historical-validation-tool-ecuador/make-table-ajax')
 def make_table_ajax(request):
 
     start_time = time.time()
@@ -1013,7 +1016,7 @@ def get_units_title(unit_type):
         units_title = "ft"
     return units_title
 
-
+@controller(name='get-time-series',url='historical-validation-tool-ecuador/get-time-series')
 def get_time_series(request):
 
     start_time = time.time()
@@ -1146,7 +1149,7 @@ def get_time_series(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get-time-series-bc',url='historical-validation-tool-ecuador/get-time-series-bc')
 def get_time_series_bc(request):
 
     start_time = time.time()
@@ -1444,7 +1447,7 @@ def get_time_series_bc(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get-available-dates',url='historical-validation-tool-ecuador/ecmwf-rapid/get-available-dates')
 def get_available_dates(request):
 
     get_data = request.GET
@@ -1522,7 +1525,7 @@ def get_observed_discharge_csv(request):
 			'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
 		})
 '''
-
+@controller(name='get_simulated_discharge_csv',url='historical-validation-tool-ecuador/get-simulated-discharge-csv')
 def get_simulated_discharge_csv(request):
     """
     Get historic simulations from ERA Interim
@@ -1563,7 +1566,7 @@ def get_simulated_discharge_csv(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno), "sim_ini: " + str(simulated_df.index[0]), "sim_end: " + str(simulated_df.index[-1]), "obs_ini: " + str(observed_df.index[0]), "obs_end: " + str(observed_df.index[-1])}',
         })
 
-
+@controller(name='get_simulated_bc_discharge_csv',url='historical-validation-tool-ecuador/get-simulated-bc-discharge-csv')
 def get_simulated_bc_discharge_csv(request):
     """
     Get historic simulations from ERA Interim
@@ -1599,7 +1602,7 @@ def get_simulated_bc_discharge_csv(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno), "sim_ini: " + str(simulated_df.index[0]), "sim_end: " + str(simulated_df.index[-1]), "obs_ini: " + str(observed_df.index[0]), "obs_end: " + str(observed_df.index[-1])}',
         })
 
-
+@controller(name='get_forecast_data_csv',url='historical-validation-tool-ecuador/get-forecast-data-csv')
 def get_forecast_data_csv(request):
     """""
     Returns Forecast data as csv
@@ -1637,7 +1640,7 @@ def get_forecast_data_csv(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_forecast_ensemble_data_csv',url='historical-validation-tool-ecuador/get-forecast-ensemble-data-csv')
 def get_forecast_ensemble_data_csv(request):
     """""
     Returns Forecast data as csv
@@ -1675,7 +1678,7 @@ def get_forecast_ensemble_data_csv(request):
                 'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_forecast_bc_data_csv',url='historical-validation-tool-ecuador/get-forecast-bc-data-csv')
 def get_forecast_bc_data_csv(request):
     """""
     Returns Forecast data as csv
@@ -1712,7 +1715,7 @@ def get_forecast_bc_data_csv(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
-
+@controller(name='get_forecast_ensemble_bc_data_csv',url='historical-validation-tool-ecuador/get-forecast-ensemble-bc-data-csv')
 def get_forecast_ensemble_bc_data_csv(request):
     """""
     Returns Forecast data as csv
@@ -1750,6 +1753,7 @@ def get_forecast_ensemble_bc_data_csv(request):
             'error': f'{"error: " + str(e), "line: " + str(exc_tb.tb_lineno)}',
         })
 
+@controller(name='user_manual',url='historical-validation-tool-ecuador/user_manual')
 def user_manual(request):
     """
     Controller for the technical manual page.
@@ -1759,6 +1763,8 @@ def user_manual(request):
     }
 
     return render(request, 'historical_validation_tool_ecuador/user_manual.html', context)
+
+@controller(name='technical_manual',url='historical-validation-tool-ecuador/technical_manual')
 def technical_manual(request):
     """
     Controller for the user manual page.
@@ -1769,6 +1775,7 @@ def technical_manual(request):
 
     return render(request, 'historical_validation_tool_ecuador/technical_manual.html', context)
 
+@controller(name='get_zoom_array',url='historical-validation-tool-ecuador/get-zoom-array')
 def get_zoom_array(request):
     zoom_description = request.GET['zoom_desc']
 

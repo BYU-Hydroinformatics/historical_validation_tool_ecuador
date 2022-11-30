@@ -1,3 +1,23 @@
+#modal-headerex{
+  display: inline;
+}
+#inamhi_logo{
+  height: 50px;
+
+}
+
+.logos_cuadrado{
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  flex-basis: fit-content;
+  justify-content: end;
+}
+#servir_logo{
+  height: 70px;
+}
+
+
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {
   display: block;
@@ -111,8 +131,12 @@
 }
 
 .obslogos {
-    width: 40%;
-    padding: 0 5px 0 5px;
+  width: 70%;
+  padding: 0 5px 0 5px;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 #Download_hydrographs{
